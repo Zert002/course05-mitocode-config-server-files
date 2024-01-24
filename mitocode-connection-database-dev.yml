@@ -1,2 +1,3 @@
 application:
   name: Mitocode Certificacion Connection
+  key: connection-database
