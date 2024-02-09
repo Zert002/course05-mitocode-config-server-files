@@ -14,4 +14,6 @@ spring:
             - StripPrefix=2
             - AddRequestHeader=token, MyToken
             - AddRequestParameter=email, choy
-            - AddResponseHeader=token, MyTokenResponse
+            - AddResponseHeader=token, ${spring.cloud.gateway.routes[0].id}
+
+        - id: product-service
