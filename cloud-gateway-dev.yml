@@ -12,6 +12,6 @@ spring:
             - Path=/api/user-service/**
           filters:
             - StripPrefix=2
-            - AddRequestHeader=token, MyToken
-            - AddRequestParameter=email, choy
-            - AddResponseHeader=token, ${spring.cloud.gateway.routes[0].id:mitocode}
+            # - AddRequestHeader=token, MyToken
+            # - AddRequestParameter=email, choy
+            # - AddResponseHeader=token, ${spring.cloud.gateway.routes[0].id:mitocode}
