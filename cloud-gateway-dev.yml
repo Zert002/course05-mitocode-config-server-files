@@ -6,6 +6,7 @@ spring:
   cloud:
     gateway:
       routes:
+        
         - id: user-service-route
           uri: lb://user-service # http://service1.com, http://service2.com
           predicates:
@@ -15,3 +16,10 @@ spring:
             # - AddRequestHeader=token, MyToken
             # - AddRequestParameter=email, choy
             # - AddResponseHeader=token, ${spring.cloud.gateway.routes[0].id:mitocode}
+
+        - id: product-service-route
+          uri: lb://product-service # http://service1.com, http://service2.com
+          predicates:
+            - Path=/api/product-service/**
+          filters:
+            - StripPrefix=2
