@@ -13,4 +13,4 @@ spring:
           filters:
             - StripPrefix=2
             - AddRequestHeader=token, MyToken
-            - AddRequestParameter=email, choy
+            - AddRequestParameter=email, coy
