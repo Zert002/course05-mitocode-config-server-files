@@ -15,5 +15,3 @@ spring:
             - AddRequestHeader=token, MyToken
             - AddRequestParameter=email, choy
             - AddResponseHeader=token, ${spring.cloud.gateway.routes[0].id:mitocode}
-
-        - id: product-service
