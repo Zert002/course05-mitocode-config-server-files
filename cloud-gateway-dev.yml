@@ -55,9 +55,12 @@ spring:
 # Logging Configuration
 logging:
   level:
+    reactor:
+      netty: ALL
     org:
       springframework:
+        cloud:
+          gateway: ALL
         web: ALL
-          reactive: ALL
   pattern:
     level: '%5p [${spring.application.name:},%X{traceId:-},%X{spanId:-}]'
