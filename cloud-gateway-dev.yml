@@ -1,8 +1,6 @@
 server:
   port: ${CUSTOM.SERVER.PORT:9080}
 
-# Circuit Breaker config
-
 # Circuit Breaker configuration
 resilience4j:
   circuitbreaker:
@@ -18,7 +16,6 @@ resilience4j:
     instances:
       user-service-cb:
         base-config: mitocode-circuitbreaker #cualquierId
-
 
 # Cloud Gateway Routes
 spring:
@@ -46,6 +43,7 @@ spring:
             - name: CircuitBreaker
               args:
                 name: user-service-cb
+                statusCodes: 400,401,403,500,503,504
                 fallbackUri: forward:/api/user-service/mitocode/user
       # Primera implementación de Custom Filter sin cambio de nombre
             # - name: CustomFilter
