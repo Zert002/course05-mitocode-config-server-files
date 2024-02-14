@@ -58,5 +58,6 @@ logging:
     org:
       springframework:
         web: ALL
+          reactive: ALL
   pattern:
     level: '%5p [${spring.application.name:},%X{traceId:-},%X{spanId:-}]'
