@@ -23,6 +23,7 @@ spring:
             - Path=/api/product-service/**
           filters:
             - StripPrefix=2
+            - MitocodeFilter=MitocodeKey,MitocodeValue
       # Primera implementación de Custom Filter sin cambio de nombre
             # - name: CustomFilter
             #   args:
