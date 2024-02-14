@@ -56,11 +56,11 @@ spring:
 logging:
   level:
     reactor:
-      netty: ALL
+      netty: DEBUG
     org:
       springframework:
         cloud:
-          gateway: ALL
-        web: ALL
+          gateway: DEBUG
+        web: DEBUG
   pattern:
     level: '%5p [${spring.application.name:},%X{traceId:-},%X{spanId:-}]'
