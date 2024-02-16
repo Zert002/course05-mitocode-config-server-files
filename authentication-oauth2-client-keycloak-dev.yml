@@ -1,0 +1,15 @@
+server:
+  port: ${CUSTOM.SERVER.PORT:9005}
+
+spring:
+  security:
+    oauth2:
+      client:
+        registration:
+          mitocode-realm:
+            provider: mitocode-realm
+            client-name: mitocode-client
+            client-id: mitocode-client
+            client-secret: Y3e74k1LodxfMzSPo4rKUhD7JNaV6IKi
+            scope: openid
+            authorization-grant-type: authorization_code
