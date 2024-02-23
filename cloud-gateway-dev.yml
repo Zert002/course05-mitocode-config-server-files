@@ -64,3 +64,7 @@ logging:
         web: DEBUG
   pattern:
     level: '%5p [${spring.application.name:},%X{traceId:-},%X{spanId:-}]'
+
+mitocode:
+  security:
+    key: 24fe7c4a866c7bbaee7ca6f4c4efb15ce3d2fc66fc5fb7e9e9e0904ecb5f074e3f659c97258b37c761c1d402b4543b9d1c2a56e059fd286b56bb0465d6b5f88295a37c1428e9d36aa6ba08e4f192221017d52741d0187aea4e94ddae867bae27
