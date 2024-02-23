@@ -1,0 +1,86 @@
+server:
+  port: ${CUSTOM.SERVER.PORT:9080}
+
+# Circuit Breaker configuration
+resilience4j:
+  circuitbreaker:
+    configs:
+      mitocode-circuitbreaker: # cualquierId
+        slidingWindowSize: 15
+        failureRateThreshold: 20
+        waitDurationInOpenState: 20s
+        permittedNumberOfCallsInHalfOpenState: 8
+        slowCallDurationThreshold: 1s
+        slowCallRateThreshold: 50
+        
+    instances:
+      user-service-cb:
+        base-config: mitocode-circuitbreaker #cualquierId
+
+# Cloud Gateway Routes
+spring:
+  cloud:
+    gateway:
+      routes:
+        
+        - id: user-service-route
+          uri: lb://user-service # http://service1.com, http://service2.com
+          predicates:
+            - Path=/api/user-service/**
+          filters:
+            - StripPrefix=2
+            # - AddRequestHeader=token, MyToken
+            # - AddRequestParameter=email, choy
+            # - AddResponseHeader=token, ${spring.cloud.gateway.routes[0].id:mitocode}
+
+        - id: product-service-route
+          uri: lb://product-service # http://service1.com, http://service2.com
+          predicates:
+            - Path=/api/product-service/**
+          filters:
+            - StripPrefix=2
+            - MitocodeFilter=MitocodeKey,MitocodeValue
+            - name: CircuitBreaker
+              args:
+                name: user-service-cb
+                statusCodes: 400,401,404,403,500,503,504
+                fallbackUri: forward:/api/user-service/mitocodes/user
+      # Primera implementación de Custom Filter sin cambio de nombre
+            # - name: CustomFilter
+            #   args:
+            #     headerKey: MitocodeKey
+            #     headerValue: MitocodeValue
+
+  security:
+    oauth2:
+      resourceserver:
+        jwt:
+          issuer-uri: http://localhost:8080/external
+          jwk-set-uri: ${spring.security.oauth2.resourceserver.jwt.issuer-uri}/protocol/openid-connect/certs
+
+
+
+
+jwt:
+  auth:
+    converter:
+      resource-id: external-client
+      principal-attribute: preferred_username
+
+# Logging Configuration
+logging:
+  level:
+    reactor:
+      netty: DEBUG
+    org:
+      springframework:
+        cloud:
+          gateway: DEBUG
+        web: DEBUG
+  pattern:
+    level: '%5p [${spring.application.name:},%X{traceId:-},%X{spanId:-}]'
+
+mitocode:
+  security:
+    key: 24fe7c4a866c7bbaee7ca6f4c4efb15ce3d2fc66fc5fb7e9e9e0904ecb5f074e3f659c97258b37c761c1d402b4543b9d1c2a56e059fd286b56bb0465d6b5f88295a37c1428e9d36aa6ba08e4f192221017d52741d0187aea4e94ddae867bae27
+
