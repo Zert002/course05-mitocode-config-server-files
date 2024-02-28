@@ -22,7 +22,7 @@ springdoc:
     enabled: true
   swagger-ui:
     path: mitocode-ui.html
-    enabled: false
+    enabled: true
 
 management:
   endpoints:
