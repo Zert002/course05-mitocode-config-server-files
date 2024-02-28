@@ -51,6 +51,16 @@ spring:
             #     headerKey: MitocodeKey
             #     headerValue: MitocodeValue
 
+#Actuator configuration
+management:
+  endpoints:
+    web:
+      exposure:
+        include: '*'
+        base-path: /actuator
+    tracing:
+      sampling:
+        probability: 1.0
 
 # Logging Configuration
 logging:
@@ -64,6 +74,9 @@ logging:
         web: DEBUG
   pattern:
     level: '%5p [${spring.application.name:},%X{traceId:-},%X{spanId:-}]'
+
+
+
 
 mitocode:
   security:
