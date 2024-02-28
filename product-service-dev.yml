@@ -13,3 +13,10 @@ info:
     name: Product Service Mitocode
     description: Módulo de la arquitectura de Microservicios que disponibiliza la información de los productos
     version: 0.0.1
+
+# OpenAPI Configuration
+
+springdoc:
+  api-docs:
+    path: /api-docs
+    enabled: true
