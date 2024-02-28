@@ -44,7 +44,7 @@ spring:
               args:
                 name: user-service-cb
                 statusCodes: 400,401,404,403,500,503,504
-                fallbackUri: forward:/api/user-service/mitocodes/user
+                fallbackUri: forward:/api/user-service/mitocode/user
       # Primera implementación de Custom Filter sin cambio de nombre
             # - name: CustomFilter
             #   args:
