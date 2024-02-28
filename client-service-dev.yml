@@ -16,3 +16,14 @@ resilience4j:
     instances:
       user-service-cb:
         base-config: mitocode-circuitbreaker #cualquierId
+
+#Actuator configuration
+management:
+  endpoints:
+    web:
+      exposure:
+        include: '*'
+        base-path: /actuator
+    tracing:
+      sampling:
+        probability: 1.0
