@@ -32,3 +32,12 @@ management:
     tracing:
       sampling:
         probability: 1.0
+
+# Logging Configuration
+logging:
+  level:
+    org:
+      springframework:
+        web: DEBUG
+  pattern:
+    level: '%5p [${spring.application.name:},%X{traceId:-},%X{spanId:-}]'
