@@ -11,3 +11,14 @@ spring:
       # username: mitocode 
       # password: mitocode
       # authentication-database: admin
+      
+#Actuator configuration
+management:
+  endpoints:
+    web:
+      exposure:
+        include: '*'
+        base-path: /actuator
+    tracing:
+      sampling:
+        probability: 1.0
