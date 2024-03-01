@@ -58,9 +58,9 @@ management:
       exposure:
         include: '*'
         base-path: /actuator
-    tracing:
-      sampling:
-        probability: 1.0
+  tracing:
+    sampling:
+      probability: 1.0
 
 # Logging Configuration
 logging:
