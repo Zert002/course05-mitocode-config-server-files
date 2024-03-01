@@ -22,3 +22,15 @@ management:
   tracing:
     sampling:
       probability: 1.0
+
+# Logging Configuration
+logging:
+  level:
+    org:
+      springframework:
+        web: ALL
+    com:
+      mitocode:
+        microservices: INFO
+  pattern:
+    level: '%5p [${spring.application.name:},%X{traceId:-},%X{spanId:-}]'
