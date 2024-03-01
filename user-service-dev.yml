@@ -28,7 +28,7 @@ logging:
   level:
     org:
       springframework:
-        web: ALL
+        web: INFO
     com:
       mitocode:
         microservices: INFO
