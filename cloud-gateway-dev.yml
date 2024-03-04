@@ -50,7 +50,8 @@ spring:
             #   args:
             #     headerKey: MitocodeKey
             #     headerValue: MitocodeValue
-
+  zipkin:
+    baseUrl: ${ZIPKIN.SERVER.HOSTNAME:http://localhost:9411}
 #Actuator configuration
 management:
   endpoints:
