@@ -34,7 +34,7 @@ springdoc:
     path: /api-docs
     enabled: true
   swagger-ui:
-    path: mitocode-ui.html
+    path: /openapi.yaml
     enabled: true
 
 #Actuator configuration
