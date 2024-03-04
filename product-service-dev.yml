@@ -34,7 +34,6 @@ springdoc:
     path: /api-docs
     enabled: true
   swagger-ui:
-    urls: '*'
     path: /openapi.yml
     enabled: true
 
