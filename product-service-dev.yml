@@ -23,7 +23,8 @@ spring:
     password: mitocode
 
   zipkin:
-    baseUrl: ${ZIPKIN.SERVER.HOSTNAME:http://localhost:9411}
+    tracing:
+      endpoint: ${ZIPKIN.SERVER.HOSTNAME:http://localhost:9411/api/v2/spans}
 
 info:
   app:

@@ -51,7 +51,8 @@ spring:
             #     headerKey: MitocodeKey
             #     headerValue: MitocodeValue
   zipkin:
-    baseUrl: ${ZIPKIN.SERVER.HOSTNAME:http://localhost:9411}
+    tracing:
+      endpoint: ${ZIPKIN.SERVER.HOSTNAME:http://localhost:9411/api/v2/spans}
 #Actuator configuration
 management:
   endpoints:
