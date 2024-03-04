@@ -70,7 +70,7 @@ logging:
     org:
       springframework:
         cloud:
-          gateway: DEBUG
+          gateway: DEBUG, INFO, ERROR, TRACE, ALL
         web: DEBUG
   pattern:
     level: '%5p [${spring.application.name:},%X{traceId:-},%X{spanId:-}]'
