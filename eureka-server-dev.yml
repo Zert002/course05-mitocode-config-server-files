@@ -5,9 +5,6 @@ spring:
   config:
     profiles:
       active: default
-  # config:
-  #   activate:
-  #     profile: default
   application:
     name: discovery-server
 
@@ -35,9 +32,9 @@ server:
 
 
 spring:
-  # config:
-  #   activate:
-  #     onProfile: profile-01
+  config:
+    profiles:
+      active: profile-01
   application:
     name: discovery-server
 
@@ -66,14 +63,13 @@ server:
 
 
 spring:
-  # config:
-  #   activate:
-  #     onProfile: profile-02
+  config:
+    profiles:
+      active: profile-02
   application:
     name: discovery-server
 
 eureka:
-
   instance:
     hostname: http://discovery-server-2.mitocode.com
     preferIpAddress: true
@@ -97,9 +93,9 @@ server:
 
 
 spring:
-  # config:
-  #   activate:
-  #     onProfile: profile-03
+  config:
+    profiles:
+      active: profile-03
   application:
     name: discovery-server
 
