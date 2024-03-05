@@ -34,9 +34,9 @@ logging:
   level:
     org:
       springframework:
-        web: DEBUG
+        web: ERROR
     com:
       mitocode:
-        microservices: INFO
+        microservices: ERROR
   pattern:
     level: '%5p [${spring.application.name:},%X{traceId:-},%X{spanId:-}]'
