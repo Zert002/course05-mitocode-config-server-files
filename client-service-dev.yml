@@ -8,7 +8,7 @@ resilience4j:
       mitocode-circuitbreaker: # cualquierId
         slidingWindowSize: 15
         failureRateThreshold: 20
-        automaticTransitionFromOpenToHalfOpenEnabled: true
+        automaticTransitionFromOpenToHalfOpenEnabled: false
         waitDurationInOpenState: 20s
         permittedNumberOfCallsInHalfOpenState: 4
         slowCallDurationThreshold: 1s
