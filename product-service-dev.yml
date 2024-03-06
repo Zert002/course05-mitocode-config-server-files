@@ -38,7 +38,7 @@ springdoc:
     enabled: true
   swagger-ui:
     path: /openapi.yml
-    enabled: true
+    enabled: false
 
 #Actuator configuration
 management:
