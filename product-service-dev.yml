@@ -40,6 +40,13 @@ springdoc:
     path: /openapi.yml
     enabled: false
 
+# Kafka configuration
+kafka:
+  mitocode:
+    topic: mitocode
+    port: 9092
+    server: 127.0.0.1
+
 #Actuator configuration
 management:
   endpoints:
