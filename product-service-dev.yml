@@ -45,7 +45,7 @@ kafka:
   mitocode:
     topic: mitocode
     port: 9092
-    server: 127.0.0.1
+    server: ${KAFKA.SERVER.HOSTNAME:127.0.0.1}
 
 #Actuator configuration
 management:
