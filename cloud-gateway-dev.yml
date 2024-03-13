@@ -37,7 +37,7 @@ spring:
           uri: lb://product-service # http://service1.com, http://service2.com
           predicates:
             - Path=/api/product-service/**
-            - Weight=product-service, 90
+            - Weight=product-service, 50
           filters:
             - StripPrefix=2
             - MitocodeFilter=MitocodeKey,MitocodeValue
@@ -56,7 +56,7 @@ spring:
           uri: lb://product-query-service # http://service1.com, http://service2.com
           predicates:
             - Path=/api/product-service/**
-            - Weight=product-service, 10
+            - Weight=product-service, 50
           filters:
             - StripPrefix=2
             - MitocodeFilter=MitocodeKey,MitocodeValue
