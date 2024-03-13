@@ -53,7 +53,7 @@ spring:
             #     headerValue: MitocodeValue
 
         - id: product-query-service-route
-          uri: lb://product-service # http://service1.com, http://service2.com
+          uri: lb://product-query-service # http://service1.com, http://service2.com
           predicates:
             - Path=/api/product-service/**
             - Weight=product-service, 75
