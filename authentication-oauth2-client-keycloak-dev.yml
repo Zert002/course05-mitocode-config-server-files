@@ -13,6 +13,7 @@ spring:
             provider: mitocode-realm
             client-name: mitocode-client
             client-id: mitocode-client
-            client-secret: Y3e74k1LodxfMzSPo4rKUhD7JNaV6IKi
+            #client-secret: Y3e74k1LodxfMzSPo4rKUhD7JNaV6IKi
+            client-secret: lUAVtKx2FIsnF51etzpbZRVZlpuwWSFj
             scope: openid
             authorization-grant-type: authorization_code
